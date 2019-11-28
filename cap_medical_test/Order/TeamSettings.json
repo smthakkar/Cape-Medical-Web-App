@@ -1,0 +1,310 @@
+[
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 1,
+    "fields": {
+        "file": "Cape Medical - PAP Team",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 1 - Rush",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'PAP Setup',  work_in_progress_wip_state__startswith = 'Rush'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 2,
+    "fields": {
+        "file": "Cape Medical - PAP Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 2 - PA Follow Up\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'PAP Setup', work_in_progress_wip_state__contains = 'PA Follow Up'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 3,
+    "fields": {
+        "file": "Cape Medical - PAP Team",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 3 - Ax Review\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'PAP Setup',  work_in_progress_wip_state__startswith = 'PAP BR - AX'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 4,
+    "fields": {
+        "file": "Cape Medical - PAP Team",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 4 - Untouched\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'PAP Setup',  work_in_progress_wip_state__startswith = 'PAP BR - QUAL'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 5,
+    "fields": {
+        "file": "Cape Medical - PAP Team",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 5 - Docs Needed >14\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "salesorderclassification__contains = 'PAP Setup', workinprogresswipstate__startswith = 'PAP BR - Doc', workinprogresswipdaysinstate__gt = 14",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 6,
+    "fields": {
+        "file": "Cape Medical - PAP Team",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 6 - Docs Needed <14\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'PAP Setup', work_in_progress_wip_state__startswith = 'PAP BR - Doc', work_in_progress_wip_days_in_state__lte = 14\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 7,
+    "fields": {
+        "file": "Cape Medical - PAP Team",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 7 - Patient Follow Up\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'PAP Setup',  work_in_progress_wip_state__contains = 'patient'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 8,
+    "fields": {
+        "file": "Cape Medical - PAP Team",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 8 - Pod Other\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'PAP Setup',  work_in_progress_wip_state__startswith='PAP BR'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 9,
+    "fields": {
+        "file": "Cape Medical - PAP Team",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 9 - Outside Pod \r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'PAP Setup'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 10,
+    "fields": {
+        "file": "Cape Medical - Scheduling Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 1 - No Calls\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_custom_fields_field6__isnull = True\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 11,
+    "fields": {
+        "file": "Cape Medical - Scheduling Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 2 - 1 Call\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_custom_fields_field6__isnull = False, sales_order_custom_fields_field9__isnull = True\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 12,
+    "fields": {
+        "file": "Cape Medical - Scheduling Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 3 - 2 Calls\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "salesorderclassification__contains = 'Closet', workinprogresswipstate__contains = 'docum'",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 13,
+    "fields": {
+        "file": "Cape Medical - Scheduling Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 4 - 3 Calls\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_custom_fields_field6__isnull = False, sales_order_custom_fields_field9__isnull = False, sales_order_custom_fields_field10__isnull = True\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 14,
+    "fields": {
+        "file": "Cape Medical - Prior Auth Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Prior Auth Raw\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_custom_fields_field6__isnull = False, sales_order_custom_fields_field9__isnull = False, sales_order_custom_fields_field10__isnull = False\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 15,
+    "fields": {
+        "file": "Cape Medical - Resupply Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Resupply Raw\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "work_in_progress_wip_state__startswith = 'BILLING - PA', work_in_progress_wip_state__startswith = 'Billing - Ins Chg'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 16,
+    "fields": {
+        "file": "Cape Medical - Stock and Bill Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 1 - Exceptions\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'PAP Resupply'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 17,
+    "fields": {
+        "file": "Cape Medical - Stock and Bill Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 2 - Docs Needed\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'Closet', work_in_progress_wip_state__contains = 'exception'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 18,
+    "fields": {
+        "file": "Cape Medical - Stock and Bill Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 3 - Prior Auth\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'Closet', work_in_progress_wip_state__contains = 'docum'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 19,
+    "fields": {
+        "file": "Cape Medical - Stock and Bill Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 4 - Work Comp\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'Closet', work_in_progress_wip_state__contains = 'PA'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 20,
+    "fields": {
+        "file": "Cape Medical - Stock and Bill Team\r\n",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Priority 5 - Other\r\n",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_classification__contains = 'Closet', work_in_progress_wip_state__contains = 'work comp'\r\n",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 21,
+    "fields": {
+        "file": "Cape Medical - Others",
+        "sharewith": "aebell@analytix.com;abpillai@analytix.com;msheehan@capemedical.net",
+        "sheet": "Others",
+        "columnsinclusions": "sales_order_status, sales_order_number, sales_order_date_created, sales_order_created_by, sales_order_branch_office, insurance_pri_payor",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+},
+{
+    "model": "Order.capemedicalteamsettings",
+    "pk": 26,
+    "fields": {
+        "file": "a",
+        "sharewith": "a",
+        "sheet": "a",
+        "columnsinclusions": "['sales_order_number', 'sales_order_date_created', 'sales_order_created_by', 'sales_order_branch_office', 'sales_order_status']",
+        "statusvalidation": "In Progress, Done",
+        "salesorderclassification": "sales_order_number__startswith=1 AND \r\n sales_order_number__endswith=1 AND \r\n sales_order_created_by__startswith=a",
+        "workinprogresswipstate": null,
+        "workinprogresswipdaysinstate": null
+    }
+}
+]

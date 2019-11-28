@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>
+            <input type="submit" value="Yes" />
+            <a href="{% url 'teamsettings' %}">Cancel</a>
+        </p>
+    </form>
+
+
+<script type="text/javascript">
+$(".js-example-responsive").select2({
+    width: 'resolve' // need to override the changed default
+});
+</script>
+
+
+{% endblock %}

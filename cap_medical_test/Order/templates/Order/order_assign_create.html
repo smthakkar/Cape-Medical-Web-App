@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="post" action="./assign_to">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ order_numbers }}
+        <input type="hidden" name="sales_orders" value="{{ order_numbers }}">
+        <p>
+            <input type="submit" value="OK">
+        </p>
+    </form>
+{% endblock %}

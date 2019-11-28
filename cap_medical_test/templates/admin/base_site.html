@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+{% load staticfiles %}
+{% block title %}{{ title }} | Analytix site administration {% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'images/AnalytixFullPNGLogo.png' %}" height="40px" />
+    </a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}
+    <a href="{% url 'admin:index' %}">
+        <h2><b>Analytix Site Administration</b></h2>
+    </a>
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main role="main" class="container">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Orders.." title="Type in Order Numbers">
+    <input type="button" id="find" value="Find" class="btn-secondary"/>
+    <div id="labels">
+        <span id="current"></span>
+        <span id="count"></span>
+    </div>
+    <div class="accordion" id="accordion2">
+    {% for file,vals in resultset.items %}
+        <h3 class="pt-4">{{ file }}</h3>
+        <hr class="bg-secondary">
+        {% for sheet,result in vals.items %}
+          <div class="card mw-50" >
+            <div class="card-header sticky-top bg-light">
+              <h5 class="d-flex justify-content-between">
+                  <div>
+                    <a class="accordion-toggle" data-toggle="collapse" href="#collapse{{forloop.parentloop.counter}}{{forloop.counter}}" data-parent="#accordion2">
+                        <div class="text-secondary">
+                            {{sheet}}
+                        </div>
+                    </div>
+                  <div class="d-flex justify-content-between">
+                      <div>
+                        <span class="d-sm-inline-flex text-right badge badge-dark badge-pill m-1" style="background-color: #004d40;">
+                            {{ result|length }}
+                        </span>
+                      </div>
+                    </a>
+                      <div>
+                      <form method="post">
+                      {% if result|length > 0 %}
+                                {% csrf_token %}
+                              <input type="submit" class="btn btn-secondary btn-sm" value="Assign To" onclick="printChecked()" formaction="{% url 'order_assign_create' subgroup_name=sheet %}">
+                              <input type="submit" class="btn btn-secondary btn-sm" value="Change Status" onclick="printChecked()" formaction="{% url 'order_status_create' subgroup_name=sheet %}">
+<!--                            <a href="{% url 'order_assign_create' subgroup_name=sheet %}" id="OK" class="btn btn-secondary btn-sm" onclick="printChecked()">Ok</a>-->
+<!--                            <input type="button" onclick="{% url 'order_assign_create' subgroup_name='{{sheet}}' %}" class="btn btn-secondary btn-sm" value="Ok"></input>-->
+                        {% endif %}
+                  </div></div>
+<!--                  <div>-->
+<!--                  </div>-->
+              </h5>
+            </div>
+
+            <div id="collapse{{forloop.parentloop.counter}}{{forloop.counter}}" class="accordion-body collapse">
+              <div class="card-body table-responsive" style="padding: 0px;">
+                  <table class="table table-sm table-striped table-borderless table-hover" style="margin-bottom: 0;">
+                    <thead class="thead-dark h-50">
+                    {% if result %}
+<!--                        <input type="button" value="Assign"/>-->
+
+                        <th></th>
+                        {% for c,r in result.0.items %}
+                            {% if c == 'sales_order_assign__assign_to__username' %}
+                                <th>Assigned_to</th>
+                            {% elif c == 'sales_order_assign__status' %}
+                                <th>Status</th>
+                            {% else %}
+                                <th>{{ c }}</th>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <th>No Data</th>
+                    {% endif %}
+                    </thead>
+
+                  {% for i in result %}
+                        <tr>
+                            <td>
+                                {% if i.sales_order_assign__assign_to__username == request.user.username or request.user.is_staff or i.sales_order_assign__assign_to__username == None %}
+                                <input type="checkbox" name="sales_order_number" value="{{ i.sales_order_number }}"/>
+                                {% endif %}
+                            </td>
+                        {% for k,v in  i.items %}
+                            {% if v == None %}
+                              <td> - </td>
+                            {% else %}
+                                {% if k == 'sales_order_number' %}
+                                    <td>
+                                        <a href="https://brightree.net/OrderEntry/frmSOOrderRO.aspx?SalesOrderKey={{ v }}&ShowAck=-1&Edit=0" target="_blank">{{ v }}</a>
+                                    </td>
+                                {% else %}
+                                    <td>{{ v }}</td>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        </tr>
+                  {% endfor %}
+                </table>
+                  </form>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+    {% endfor %}
+    </div>
+</main>
+
+<script type="text/javascript">
+    function printChecked(){
+		var items=document.getElementsByName('sales_order_number');
+		var selectedItems="";
+		for(var i=0; i<items.length; i++){
+			if(items[i].type=='checkbox' && items[i].checked==true)
+				selectedItems+=items[i].value+"\n";
+		}
+		document.getElementsByName('sales_order_number').value = selectedItems
+<!--		alert(selectedItems);-->
+	}
+</script>
+
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementsByClassName("table");
+        tr = [];
+        for (a=0; a < table.length; i++) {
+            tr += table[a].getElementsByTagName("tr");
+        }
+        window.alert(tr.length).show()
+<!--        tr = table.getElementsByTagName("tr");-->
+
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementByTagName("td")[2];
+            if (td) {
+            txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+{% endblock %}

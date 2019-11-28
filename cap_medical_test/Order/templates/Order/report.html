@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main role="main" class="container">
+    <div id="labels">
+        <span id="current"></span>
+        <span id="count"></span>
+    </div>
+    <div class="accordion" id="accordion2">
+    {% for main_grp,vals in resultset.items %}
+        <h3 class="pt-4">{{ main_grp }}</h3>
+        <hr class="bg-secondary">
+        {% for sub_grp,result in vals.items %}
+          <div class="card mw-50" >
+            <div class="card-header sticky-top bg-light">
+              <h5 class="d-flex justify-content-between">
+                  <div>
+                    <a class="accordion-toggle" data-toggle="collapse" href="#collapse{{forloop.parentloop.counter}}{{forloop.counter}}" data-parent="#accordion2">
+                        <div class="text-secondary">
+                            {{sub_grp}}
+                        </div>
+                    </div>
+                  <div class="d-flex justify-content-between">
+                      <div>
+                        <span class="d-sm-inline-flex text-right badge badge-dark badge-pill m-1" style="background-color: #004d40;">
+                            {{ result|length }}
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+<!--                  <div>-->
+<!--                  </div>-->
+              </h5>
+            </div>
+
+            <div id="collapse{{forloop.parentloop.counter}}{{forloop.counter}}" class="accordion-body collapse">
+              <div class="card-body table-responsive" style="padding: 0px;">
+                  <table class="table table-sm table-striped table-borderless table-hover" style="margin-bottom: 0;">
+                    <thead class="thead-dark h-50">
+                    {% if result %}
+<!--                        <input type="button" value="Assign"/>-->
+
+
+                        {% for c,r in result.0.items %}
+                            {% if c == 'sales_order_assign__assign_to__username' %}
+                                <th>Assigned_to</th>
+                            {% elif c == 'sales_order_assign__status' %}
+                                <th>Status</th>
+                            {% else %}
+                                <th>{{ c }}</th>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <th>No Data</th>
+                    {% endif %}
+                    </thead>
+
+                  {% for i in result %}
+                        <tr>
+                        {% for k,v in  i.items %}
+                            {% if v == None %}
+                              <td> - </td>
+                            {% else %}
+                                {% if k == 'sales_order_number' %}
+                                    <td>
+                                        <a href="https://brightree.net/OrderEntry/frmSOOrderRO.aspx?SalesOrderKey={{ v }}&ShowAck=-1&Edit=0" target="_blank">{{ v }}</a>
+                                    </td>
+                                {% else %}
+                                    <td>{{ v }}</td>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        </tr>
+                  {% endfor %}
+                </table>
+                  </form>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+    {% endfor %}
+    </div>
+</main>
+
+
+{% endblock %}
