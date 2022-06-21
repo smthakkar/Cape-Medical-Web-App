@@ -29,7 +29,7 @@ jdcal==1.4.1
 kombu==4.6.3
 lxml==4.3.4
 meld3==1.0.2
-numpy==1.16.4
+numpy==1.22.0
 openpyxl==2.6.2
 pandas==0.24.2
 parsel==1.5.1
